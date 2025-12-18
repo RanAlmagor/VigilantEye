@@ -1,58 +1,62 @@
 # -----------------------------------------------------------------------------
-# CMake Build Configuration for VigilantEye
-# Target System: Embedded Linux / Windows
-# Author: Ran Almagor
+# VigilantEye - Build Configuration
+# Architecture: Modular C++17 (Core, HAL, Vision, Utils, UI)
 # -----------------------------------------------------------------------------
 
 cmake_minimum_required(VERSION 3.10)
 
-# vcpkg toolchain (must be set before the first configure)
+# --- 1. VCPKG Integration (Environment Detection) ---
+# Attempts to locate the vcpkg toolchain file automatically for local development.
+# If not found, assumes the toolchain is passed via command line arguments.
 set(LOCAL_VCPKG_PATH "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake")
 
-if(NOT DEFINED CMAKE_TOOLCHAIN_FILE AND EXISTS "${LOCAL_VCPKG_PATH}")
-    set(CMAKE_TOOLCHAIN_FILE "${LOCAL_VCPKG_PATH}" CACHE STRING "vcpkg toolchain file")
-    message(STATUS "Build System: Local vcpkg toolchain detected (Ran's Environment).")
+if(EXISTS ${LOCAL_VCPKG_PATH})
+    set(CMAKE_TOOLCHAIN_FILE ${LOCAL_VCPKG_PATH})
+    message(STATUS ">> Build System: Local vcpkg toolchain detected.")
 else()
-    message(STATUS "Build System: Portable mode OR toolchain already set.")
+    message(STATUS ">> Build System: Standard environment (No local vcpkg forced).")
 endif()
 
-project(VigilantEye
-    VERSION 1.0
-    DESCRIPTION "Real-time Embedded Vision Tracker"
-    LANGUAGES CXX
-)
+# --- 2. Project Metadata ---
+project(VigilantEye VERSION 2.0 DESCRIPTION "Real-time UAV Tracking System")
 
+# --- 3. C++ Standard Configuration ---
+# Enforce C++17 standard for modern language features (smart pointers, filesystem).
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# --- 4. Dependencies ---
 find_package(OpenCV REQUIRED)
+message(STATUS ">> Dependency Check: OpenCV ${OpenCV_VERSION} Found.")
 
-message(STATUS "Build System: VigilantEye Configuration Started")
-message(STATUS "  - OpenCV Found: ${OpenCV_FOUND}")
-message(STATUS "  - OpenCV Version: ${OpenCV_VERSION}")
-
-add_executable(VigilantEye
-    src/main.cpp
-
-    app/App.cpp
-
-    vision/Camera.cpp
-    vision/ObjectTracker.cpp
-
-    control/AutoFramingController.cpp
-
-    telemetry/FpsCounter.cpp
-    telemetry/Telemetry.cpp
-
-    util/Timer.cpp
+# --- 5. Source Discovery ---
+# Recursively find all source (.cpp) and header (.h) files in the project structure.
+# This eliminates the need to manually list every new file.
+file(GLOB_RECURSE SOURCES 
+    "src/*.cpp" 
+    "include/*.h"
 )
 
-# Allow includes like: #include "vision/Camera.h"
-target_include_directories(VigilantEye PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}
-    ${OpenCV_INCLUDE_DIRS}
+# --- 6. Include Directories ---
+# Add include paths to allow direct imports (e.g., #include "WebcamSource.h")
+include_directories(
+    include
+    include/Core
+    include/HAL/Sensors
+    include/HAL/Actuators
+    include/Vision
+    include/Utils
+    include/UI
 )
 
+# --- 7. Target Definition ---
+add_executable(VigilantEye ${SOURCES})
+
+# --- 8. Linking ---
 target_link_libraries(VigilantEye PRIVATE ${OpenCV_LIBS})
 
-message(STATUS "Build System: Ready. Press Play to launch.")
+# --- 9. Build Summary ---
+message(STATUS "-------------------------------------------------")
+message(STATUS "VigilantEye Configuration Ready.")
+message(STATUS "Target Architecture: HAL (Sensors/Actuators) | Core | Vision")
+message(STATUS "-------------------------------------------------")
