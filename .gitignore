@@ -399,3 +399,11 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+/out/
+/build/
+/.vs/
+CMakeCache.txt
+CMakeFiles/
+**/*.user
+**/*.suo
