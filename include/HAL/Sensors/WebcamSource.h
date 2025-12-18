@@ -3,6 +3,8 @@
 
 #include "IFrameSource.h"
 #include <opencv2/videoio.hpp> 
+#include <string>
+
 
 class WebcamSource : public IFrameSource
 {
@@ -29,12 +31,14 @@ public:
     bool initialize() override;
     bool capture(cv::Mat& frame) override;
     const std::string& getSourceName() const override { return m_sourceName; }
-    ~WebcamSource() override = default;
+    void stop() noexcept;
+    ~WebcamSource() override { stop(); }
+
 
     // Getters
-    const  int width()  const { return m_actualWidth; }
-    const  int height() const { return m_actualHeight; }
-    const int fps()    const { return m_actualFps; }
+    int width()  const { return m_actualWidth; }
+    int height() const { return m_actualHeight; }
+    int fps()    const { return m_actualFps; }
 
 private:
     cv::VideoCapture m_cap;

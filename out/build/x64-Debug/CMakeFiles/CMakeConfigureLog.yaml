@@ -6,7 +6,7 @@ events:
     backtrace:
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:309 (find_program)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:146 (include)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     mode: "program"
     variable: "Z_VCPKG_CL"
     description: "Path to a program."
@@ -153,7 +153,7 @@ events:
     kind: "message-v1"
     backtrace:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     message: |
       The system is: Windows - 10.0.26200 - AMD64
   -
@@ -164,7 +164,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     mode: "file"
     variable: "src_in"
     description: "Path to a file."
@@ -270,7 +270,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     message: |
       Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
       Compiler: C:/Program Files/Microsoft Visual Studio/18/Community/VC/Tools/MSVC/14.50.35717/bin/Hostx64/x64/cl.exe 
@@ -303,7 +303,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:1341 (message)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake:250 (CMAKE_DETERMINE_MSVC_SHOWINCLUDES_PREFIX)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     message: |
       Detecting CXX compiler /showIncludes prefix:
         main.c
@@ -317,7 +317,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:103 (__resolve_linker_path)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     mode: "program"
     variable: "_CMAKE_TOOL_WITH_PATH"
     description: "Path to a program."
@@ -923,7 +923,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:65 (__resolve_tool_path)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:104 (__resolve_linker_path)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     mode: "program"
     variable: "_CMAKE_TOOL_WITH_PATH"
     description: "Path to a program."
@@ -1694,7 +1694,7 @@ events:
     backtrace:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     mode: "program"
     variable: "CMAKE_LINKER"
     description: "Path to a program."
@@ -2298,7 +2298,7 @@ events:
     backtrace:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     mode: "program"
     variable: "CMAKE_MT"
     description: "Path to a program."
@@ -2926,7 +2926,7 @@ events:
     backtrace:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake:238 (find_program)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake:206 (include)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     mode: "program"
     variable: "CMAKE_AR"
     description: "Path to a program."
@@ -3533,7 +3533,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC.cmake:554 (__windows_compiler_msvc_enable_rc)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/Platform/Windows-MSVC-CXX.cmake:6 (__windows_compiler_msvc)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeCXXInformation.cmake:48 (include)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     mode: "program"
     variable: "CMAKE_RC_COMPILER"
     description: "RC compiler"
@@ -4382,12 +4382,12 @@ events:
     backtrace:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-r6rkbq"
-      binary: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-r6rkbq"
+      source: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-nk9xqy"
+      binary: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-nk9xqy"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -4401,11 +4401,11 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-r6rkbq'
+        Change Dir: 'C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-nk9xqy'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_0a5aa
-        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_0a5aa.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_0a5aa.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_0a5aa.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_0a5aa.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_0a5aa.exe /implib:cmTC_0a5aa.lib /pdb:cmTC_0a5aa.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_1ca92
+        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 /showIncludes /FoCMakeFiles\\cmTC_1ca92.dir\\CMakeCXXCompilerABI.cpp.obj /FdCMakeFiles\\cmTC_1ca92.dir\\ /FS -c "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\share\\cmake-4.1\\Modules\\CMakeCXXCompilerABI.cpp"
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_1ca92.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_1ca92.dir\\CMakeCXXCompilerABI.cpp.obj  /out:cmTC_1ca92.exe /implib:cmTC_1ca92.lib /pdb:cmTC_1ca92.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
         
       exitCode: 0
   -
@@ -4413,7 +4413,7 @@ events:
     backtrace:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     message: |
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|link\\.exe|lld-link(\\.exe)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
@@ -4431,7 +4431,7 @@ events:
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake:36 (message)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
       - "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt:7 (project)"
+      - "CMakeLists.txt:6 (project)"
     message: |
       Running the CXX compiler's linker: "C:/PROGRA~1/MIB055~1/18/COMMUN~1/VC/Tools/MSVC/1450~1.357/bin/Hostx64/x64/link.exe" "-v"
       Microsoft (R) Incremental Linker Version 14.50.35720.0
@@ -4445,7 +4445,7 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:19 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     mode: "program"
     variable: "Protobuf_PROTOC_EXECUTABLE"
     description: "Path to a program."
@@ -4569,12 +4569,12 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:19 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-uk5zkl"
-      binary: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-uk5zkl"
+      source: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-b1y2ef"
+      binary: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-b1y2ef"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -4587,13 +4587,13 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-uk5zkl'
+        Change Dir: 'C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-b1y2ef'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_48952
-        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /showIncludes /FoCMakeFiles\\cmTC_48952.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_48952.dir\\ /FS -c C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-uk5zkl\\src.cxx
-        FAILED: CMakeFiles/cmTC_48952.dir/src.cxx.obj 
-        C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /showIncludes /FoCMakeFiles\\cmTC_48952.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_48952.dir\\ /FS -c C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-uk5zkl\\src.cxx
-        C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-uk5zkl\\src.cxx(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_2bcda
+        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /showIncludes /FoCMakeFiles\\cmTC_2bcda.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_2bcda.dir\\ /FS -c C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-b1y2ef\\src.cxx
+        FAILED: CMakeFiles/cmTC_2bcda.dir/src.cxx.obj 
+        C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP -DCMAKE_HAVE_LIBC_PTHREAD  /DWIN32 /D_WINDOWS /W3 /GR /EHsc  /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /showIncludes /FoCMakeFiles\\cmTC_2bcda.dir\\src.cxx.obj /FdCMakeFiles\\cmTC_2bcda.dir\\ /FS -c C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-b1y2ef\\src.cxx
+        C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-b1y2ef\\src.cxx(1): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory
         ninja: build stopped: subcommand failed.
         
       exitCode: 1
@@ -4614,12 +4614,12 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:19 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-jq3a44"
-      binary: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-jq3a44"
+      source: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-zdxp2u"
+      binary: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-zdxp2u"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -4632,14 +4632,14 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-jq3a44'
+        Change Dir: 'C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-zdxp2u'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_8b850
-        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /showIncludes /FoCMakeFiles\\cmTC_8b850.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_8b850.dir\\ /FS -c C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-jq3a44\\CheckFunctionExists.cxx
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_8b850.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_8b850.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_8b850.exe /implib:cmTC_8b850.lib /pdb:cmTC_8b850.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_8b850.exe 
-        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_8b850.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_8b850.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_8b850.exe /implib:cmTC_8b850.lib /pdb:cmTC_8b850.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_8b850.dir\\CheckFunctionExists.cxx.obj /out:cmTC_8b850.exe /implib:cmTC_8b850.lib /pdb:cmTC_8b850.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_8b850.dir/intermediate.manifest CMakeFiles\\cmTC_8b850.dir/manifest.res" failed (exit code 1104) with the following output:\x0d
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_d5c2a
+        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /showIncludes /FoCMakeFiles\\cmTC_d5c2a.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_d5c2a.dir\\ /FS -c C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-zdxp2u\\CheckFunctionExists.cxx
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_d5c2a.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d5c2a.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_d5c2a.exe /implib:cmTC_d5c2a.lib /pdb:cmTC_d5c2a.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_d5c2a.exe 
+        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_d5c2a.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d5c2a.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_d5c2a.exe /implib:cmTC_d5c2a.lib /pdb:cmTC_d5c2a.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  pthreads.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_d5c2a.dir\\CheckFunctionExists.cxx.obj /out:cmTC_d5c2a.exe /implib:cmTC_d5c2a.lib /pdb:cmTC_d5c2a.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_d5c2a.dir/intermediate.manifest CMakeFiles\\cmTC_d5c2a.dir/manifest.res" failed (exit code 1104) with the following output:\x0d
         LINK : fatal error LNK1104: cannot open file 'pthreads.lib'\x0d\x0d
         ninja: build stopped: subcommand failed.
         
@@ -4661,12 +4661,12 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:19 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-k15hez"
-      binary: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-k15hez"
+      source: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-52rtmg"
+      binary: "C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-52rtmg"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -4679,14 +4679,14 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-k15hez'
+        Change Dir: 'C:/Users/hadma/Desktop/git/VigilantEye/out/build/x64-Debug/CMakeFiles/CMakeScratch/TryCompile-52rtmg'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_81f36
-        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /showIncludes /FoCMakeFiles\\cmTC_81f36.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_81f36.dir\\ /FS -c C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-k15hez\\CheckFunctionExists.cxx
-        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_81f36.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_81f36.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_81f36.exe /implib:cmTC_81f36.lib /pdb:cmTC_81f36.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        FAILED: cmTC_81f36.exe 
-        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_81f36.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_81f36.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_81f36.exe /implib:cmTC_81f36.lib /pdb:cmTC_81f36.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
-        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_81f36.dir\\CheckFunctionExists.cxx.obj /out:cmTC_81f36.exe /implib:cmTC_81f36.lib /pdb:cmTC_81f36.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_81f36.dir/intermediate.manifest CMakeFiles\\cmTC_81f36.dir/manifest.res" failed (exit code 1104) with the following output:\x0d
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe" -v cmTC_733f1
+        [1/2] C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\cl.exe  /nologo /TP   /DWIN32 /D_WINDOWS /W3 /GR /EHsc -DCHECK_FUNCTION_EXISTS=pthread_create /MDd /Zi /Ob0 /Od /RTC1 -std:c++17 /showIncludes /FoCMakeFiles\\cmTC_733f1.dir\\CheckFunctionExists.cxx.obj /FdCMakeFiles\\cmTC_733f1.dir\\ /FS -c C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\out\\build\\x64-Debug\\CMakeFiles\\CMakeScratch\\TryCompile-52rtmg\\CheckFunctionExists.cxx
+        [2/2] C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_733f1.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_733f1.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_733f1.exe /implib:cmTC_733f1.lib /pdb:cmTC_733f1.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        FAILED: cmTC_733f1.exe 
+        C:\\WINDOWS\\system32\\cmd.exe /C "cd . && "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\Common7\\IDE\\CommonExtensions\\Microsoft\\CMake\\CMake\\bin\\cmake.exe" -E vs_link_exe --msvc-ver=1950 --intdir=CMakeFiles\\cmTC_733f1.dir --rc=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\rc.exe --mt=C:\\PROGRA~2\\WI3CF2~1\\10\\bin\\100261~1.0\\x64\\mt.exe --manifests  -- C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_733f1.dir\\CheckFunctionExists.cxx.obj  /out:cmTC_733f1.exe /implib:cmTC_733f1.lib /pdb:cmTC_733f1.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console  pthread.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib && cd ."
+        LINK Pass 1: command "C:\\PROGRA~1\\MIB055~1\\18\\COMMUN~1\\VC\\Tools\\MSVC\\1450~1.357\\bin\\Hostx64\\x64\\link.exe /nologo CMakeFiles\\cmTC_733f1.dir\\CheckFunctionExists.cxx.obj /out:cmTC_733f1.exe /implib:cmTC_733f1.lib /pdb:cmTC_733f1.pdb /version:0.0 /machine:x64 /debug /INCREMENTAL /subsystem:console pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTFILE:CMakeFiles\\cmTC_733f1.dir/intermediate.manifest CMakeFiles\\cmTC_733f1.dir/manifest.res" failed (exit code 1104) with the following output:\x0d
         LINK : fatal error LNK1104: cannot open file 'pthread.lib'\x0d\x0d
         ninja: build stopped: subcommand failed.
         
@@ -4702,7 +4702,7 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:19 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     name: "absl"
     configs:
       -
@@ -4851,7 +4851,7 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:19 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     name: "utf8_range"
     configs:
       -
@@ -5002,7 +5002,7 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:19 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     name: "Protobuf"
     configs:
       -
@@ -5152,7 +5152,7 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:38 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     name: "flatbuffers"
     configs:
       -
@@ -5302,7 +5302,7 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:39 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     name: "quirc"
     configs:
       -
@@ -5456,7 +5456,7 @@ events:
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVModules.cmake:40 (find_dependency)"
       - "out/build/x64-Debug/vcpkg_installed/x64-windows/share/opencv4/OpenCVConfig.cmake:128 (include)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     name: "Tiff"
     configs:
       -
@@ -5958,7 +5958,7 @@ events:
     kind: "find_package-v1"
     backtrace:
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:908 (_find_package)"
-      - "CMakeLists.txt:14 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
     name: "OpenCV"
     configs:
       -
@@ -6101,7 +6101,7 @@ events:
     backtrace:
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:188 (find_program)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:621 (z_vcpkg_set_powershell_path)"
-      - "CMakeLists.txt:36 (add_executable)"
+      - "CMakeLists.txt:21 (add_executable)"
     mode: "program"
     variable: "Z_VCPKG_PWSH_PATH"
     description: "Path to a program."
@@ -7129,7 +7129,7 @@ events:
     backtrace:
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:193 (find_program)"
       - "C:/Users/hadma/vcpkg/scripts/buildsystems/vcpkg.cmake:621 (z_vcpkg_set_powershell_path)"
-      - "CMakeLists.txt:36 (add_executable)"
+      - "CMakeLists.txt:21 (add_executable)"
     mode: "program"
     variable: "Z_VCPKG_BUILTIN_POWERSHELL_PATH"
     description: "Path to a program."
