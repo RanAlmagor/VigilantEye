@@ -1,40 +1,27 @@
 ﻿#include <iostream>
-#include <opencv2/highgui.hpp> // בשביל imshow, waitKey
+#include <memory>
+
+// החיבורים למערכת שלנו
+#include "Core/SystemController.h"
 #include "HAL/Sensors/WebcamSource.h"
 
-int main() {
-    // יצירת אובייקט המצלמה
-    WebcamSource cam;
+int main()
+{
+    try
+    {
+        // 1. יצירת החיישן (מצלמה מס' 0)
+        auto sensor = std::make_unique<WebcamSource>(0);
 
-    std::cout << "[MAIN] System Starting..." << std::endl;
+        // 2. יצירת המנהל והעברת החיישן אליו
+        SystemController system(std::move(sensor));
 
-    // אתחול
-    if (!cam.initialize()) {
-        std::cerr << "[ERROR] Could not initialize camera!" << std::endl;
-        return -1;
+        // 3. הרצה
+        system.run();
     }
-
-    std::cout << "[MAIN] Camera is ready. Press 'ESC' to exit." << std::endl;
-
-    cv::Mat frame;
-
-    // לולאה אינסופית
-    while (true) {
-
-        // לכידת תמונה
-        if (!cam.capture(frame)) {
-            std::cerr << "[ERROR] Frame capture failed!" << std::endl;
-            break;
-        }
-
-        // הצגה על המסך
-        cv::imshow("VigilantEye Camera Test", frame);
-
-        // המתנה של 10 מילישניות ללחיצת מקש
-        char key = (char)cv::waitKey(10);
-        if (key == 27) { // 27 = ESC
-            break;
-        }
+    catch (const std::exception& e)
+    {
+        std::cerr << "Critical Error: " << e.what() << std::endl;
+        return -1;
     }
 
     return 0;
