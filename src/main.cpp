@@ -1,26 +1,32 @@
 ﻿#include <iostream>
 #include <memory>
-
-// החיבורים למערכת שלנו
 #include "Core/SystemController.h"
 #include "HAL/Sensors/WebcamSource.h"
 
 int main()
 {
-    try
-    {
-        // 1. יצירת החיישן (מצלמה מס' 0)
-        auto sensor = std::make_unique<WebcamSource>(0);
+    try {
+        std::cout << "--- VigilantEye Startup ---" << std::endl;
 
-        // 2. יצירת המנהל והעברת החיישן אליו
-        SystemController system(std::move(sensor));
+  
+        auto camera = std::make_unique<WebcamSource>(0);
 
-        // 3. הרצה
+        
+        if (!camera->initialize()) {
+            std::cerr << "[Fatal] Could not initialize camera!" << std::endl;
+            std::cin.get(); 
+            return -1;
+        }
+
+        
+        SystemController system(std::move(camera));
+
+       
         system.run();
     }
-    catch (const std::exception& e)
-    {
-        std::cerr << "Critical Error: " << e.what() << std::endl;
+    catch (const std::exception& e) {
+        std::cerr << "Fatal Error: " << e.what() << std::endl;
+        std::cin.get();
         return -1;
     }
 

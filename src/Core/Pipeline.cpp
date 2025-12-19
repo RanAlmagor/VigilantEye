@@ -1,20 +1,19 @@
-// ===============================
-// Pipeline.cpp
-// ===============================
+﻿#include "Core/Pipeline.h"
 
-
-#include "Core/Pipeline.h"
-#include <opencv2/imgproc.hpp> // cv::cvtColor
+void Pipeline::addAlgorithm(std::unique_ptr<IVisionAlgorithm> algo)
+{
+    m_algorithms.push_back(std::move(algo));
+}
 
 void Pipeline::process(const cv::Mat& input, cv::Mat& output)
 {
-    // Safety check: do nothing if input is empty
     if (input.empty()) return;
 
-    // ============================================
-    // TODO: Connect Vision Module here later.
-    // For now: Convert to Grayscale as a proof of concept.
-    // ============================================
+  
+    input.copyTo(output);
 
-    cv::cvtColor(input, output, cv::COLOR_BGR2GRAY);
+    
+    for (const auto& algo : m_algorithms) {
+        algo->detect(input, output);
+    }
 }

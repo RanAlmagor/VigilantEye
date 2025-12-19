@@ -1,23 +1,22 @@
-// ===============================
-// Pipeline.h
-// ===============================
-
-#ifndef CORE_PIPELINE_H
+﻿#ifndef CORE_PIPELINE_H
 #define CORE_PIPELINE_H
 
-#include <opencv2/core/mat.hpp>
+#include <opencv2/core.hpp>
+#include <vector>
+#include <memory>
+#include "Vision/IVisionAlgorithm.h" 
 
 class Pipeline
 {
 public:
-    Pipeline() = default;
+  
+    void addAlgorithm(std::unique_ptr<IVisionAlgorithm> algo);
 
-    /**
-     * @brief Main processing method.
-     * @param input  The raw frame from the sensor (Read-Only).
-     * @param output The processed frame to be displayed (Write-Only).
-     */
     void process(const cv::Mat& input, cv::Mat& output);
+
+private:
+   
+    std::vector<std::unique_ptr<IVisionAlgorithm>> m_algorithms;
 };
 
 #endif // CORE_PIPELINE_H
