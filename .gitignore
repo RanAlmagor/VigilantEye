@@ -400,10 +400,22 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-/out/
-/build/
-/.vs/
-CMakeCache.txt
+
+# CMake
+out/
+build/
+CMakeUserPresets.json
 CMakeFiles/
-**/*.user
-**/*.suo
+CMakeCache.txt
+cmake_install.cmake
+*.cmake
+
+# vcpkg build artifacts (generated)
+**/vcpkg_installed/
+**/vcpkg_buildtrees/
+**/vcpkg_packages/
+
+# Binaries
+*.exe
+*.dll
+*.pdb
