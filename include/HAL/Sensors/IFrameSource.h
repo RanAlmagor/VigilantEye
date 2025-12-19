@@ -1,3 +1,7 @@
+// ===============================
+// IFrameSource.h
+// ===============================
+
 #ifndef HAL_SENSORS_IFRAME_SOURCE_H
 #define HAL_SENSORS_IFRAME_SOURCE_H
 #include <opencv2/core/mat.hpp>
@@ -35,6 +39,7 @@ public:
 	virtual const std::string& getSourceName() const = 0;
 
 
+	virtual void stop() noexcept = 0;
 	virtual ~IFrameSource() = default;
 
 };

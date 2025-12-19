@@ -57,11 +57,4 @@ bool WebcamSource::capture(cv::Mat& frame) {
     return true;
 }
 
-void WebcamSource::stop() noexcept
-{
-    if (m_cap.isOpened())
-    {
-        m_cap.release();
-    }
-       
-}
+

@@ -1,3 +1,8 @@
+
+// ===============================
+// WebcamSource.h
+// ===============================
+
 #ifndef HAL_SENSORS_WEBCAM_SOURCE_H
 #define HAL_SENSORS_WEBCAM_SOURCE_H
 
@@ -31,8 +36,8 @@ public:
     bool initialize() override;
     bool capture(cv::Mat& frame) override;
     const std::string& getSourceName() const override { return m_sourceName; }
-    void stop() noexcept;
     ~WebcamSource() override { stop(); }
+    void stop() noexcept override { if (m_cap.isOpened()) m_cap.release(); }
 
 
     // Getters
