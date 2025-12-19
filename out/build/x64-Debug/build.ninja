@@ -49,12 +49,48 @@ cmake_ninja_workdir = C$:\Users\hadma\Desktop\git\VigilantEye\out\build\x64-Debu
 
 build cmake_object_order_depends_target_VigilantEye: phony || .
 
+build CMakeFiles\VigilantEye.dir\src\Core\Pipeline.cpp.obj: CXX_COMPILER__VigilantEye_unscanned_Debug C$:\Users\hadma\Desktop\git\VigilantEye\src\Core\Pipeline.cpp || cmake_object_order_depends_target_VigilantEye
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -IC:\Users\hadma\Desktop\git\VigilantEye\include -external:IC:\Users\hadma\Desktop\git\VigilantEye\out\build\x64-Debug\vcpkg_installed\x64-windows\include\opencv4 -external:W0
+  OBJECT_DIR = CMakeFiles\VigilantEye.dir
+  OBJECT_FILE_DIR = CMakeFiles\VigilantEye.dir\src\Core
+  TARGET_COMPILE_PDB = CMakeFiles\VigilantEye.dir\
+  TARGET_PDB = VigilantEye.pdb
+
+build CMakeFiles\VigilantEye.dir\src\Core\SystemController.cpp.obj: CXX_COMPILER__VigilantEye_unscanned_Debug C$:\Users\hadma\Desktop\git\VigilantEye\src\Core\SystemController.cpp || cmake_object_order_depends_target_VigilantEye
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -IC:\Users\hadma\Desktop\git\VigilantEye\include -external:IC:\Users\hadma\Desktop\git\VigilantEye\out\build\x64-Debug\vcpkg_installed\x64-windows\include\opencv4 -external:W0
+  OBJECT_DIR = CMakeFiles\VigilantEye.dir
+  OBJECT_FILE_DIR = CMakeFiles\VigilantEye.dir\src\Core
+  TARGET_COMPILE_PDB = CMakeFiles\VigilantEye.dir\
+  TARGET_PDB = VigilantEye.pdb
+
+build CMakeFiles\VigilantEye.dir\src\HAL\Sensors\VideoFileSource.cpp.obj: CXX_COMPILER__VigilantEye_unscanned_Debug C$:\Users\hadma\Desktop\git\VigilantEye\src\HAL\Sensors\VideoFileSource.cpp || cmake_object_order_depends_target_VigilantEye
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -IC:\Users\hadma\Desktop\git\VigilantEye\include -external:IC:\Users\hadma\Desktop\git\VigilantEye\out\build\x64-Debug\vcpkg_installed\x64-windows\include\opencv4 -external:W0
+  OBJECT_DIR = CMakeFiles\VigilantEye.dir
+  OBJECT_FILE_DIR = CMakeFiles\VigilantEye.dir\src\HAL\Sensors
+  TARGET_COMPILE_PDB = CMakeFiles\VigilantEye.dir\
+  TARGET_PDB = VigilantEye.pdb
+
 build CMakeFiles\VigilantEye.dir\src\HAL\Sensors\WebcamSource.cpp.obj: CXX_COMPILER__VigilantEye_unscanned_Debug C$:\Users\hadma\Desktop\git\VigilantEye\src\HAL\Sensors\WebcamSource.cpp || cmake_object_order_depends_target_VigilantEye
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
   INCLUDES = -IC:\Users\hadma\Desktop\git\VigilantEye\include -external:IC:\Users\hadma\Desktop\git\VigilantEye\out\build\x64-Debug\vcpkg_installed\x64-windows\include\opencv4 -external:W0
   OBJECT_DIR = CMakeFiles\VigilantEye.dir
   OBJECT_FILE_DIR = CMakeFiles\VigilantEye.dir\src\HAL\Sensors
+  TARGET_COMPILE_PDB = CMakeFiles\VigilantEye.dir\
+  TARGET_PDB = VigilantEye.pdb
+
+build CMakeFiles\VigilantEye.dir\src\UI\HUD.cpp.obj: CXX_COMPILER__VigilantEye_unscanned_Debug C$:\Users\hadma\Desktop\git\VigilantEye\src\UI\HUD.cpp || cmake_object_order_depends_target_VigilantEye
+  CONFIG = Debug
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -IC:\Users\hadma\Desktop\git\VigilantEye\include -external:IC:\Users\hadma\Desktop\git\VigilantEye\out\build\x64-Debug\vcpkg_installed\x64-windows\include\opencv4 -external:W0
+  OBJECT_DIR = CMakeFiles\VigilantEye.dir
+  OBJECT_FILE_DIR = CMakeFiles\VigilantEye.dir\src\UI
   TARGET_COMPILE_PDB = CMakeFiles\VigilantEye.dir\
   TARGET_PDB = VigilantEye.pdb
 
@@ -75,7 +111,7 @@ build CMakeFiles\VigilantEye.dir\src\main.cpp.obj: CXX_COMPILER__VigilantEye_uns
 #############################################
 # Link the executable VigilantEye.exe
 
-build VigilantEye.exe: CXX_EXECUTABLE_LINKER__VigilantEye_Debug CMakeFiles\VigilantEye.dir\src\HAL\Sensors\WebcamSource.cpp.obj CMakeFiles\VigilantEye.dir\src\main.cpp.obj | vcpkg_installed\x64-windows\debug\lib\opencv_stitching4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_aruco4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_bgsegm4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_bioinspired4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_ccalib4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_dnn_objdetect4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_dnn_superres4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_dpm4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_face4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_fuzzy4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_hfs4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_img_hash4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_intensity_transform4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_line_descriptor4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_mcc4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_rapid4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_reg4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_saliency4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_signal4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_stereo4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_structured_light4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_superres4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_surface_matching4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_tracking4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_videostab4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_wechat_qrcode4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_xfeatures2d4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_xobjdetect4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_xphoto4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_shape4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_highgui4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_datasets4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_ml4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_plot4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_phase_unwrapping4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_optflow4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_ximgproc4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_video4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_videoio4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_imgcodecs4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_objdetect4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_calib3d4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_dnn4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_features2d4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_flann4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_photo4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_imgproc4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_core4d.lib
+build VigilantEye.exe: CXX_EXECUTABLE_LINKER__VigilantEye_Debug CMakeFiles\VigilantEye.dir\src\Core\Pipeline.cpp.obj CMakeFiles\VigilantEye.dir\src\Core\SystemController.cpp.obj CMakeFiles\VigilantEye.dir\src\HAL\Sensors\VideoFileSource.cpp.obj CMakeFiles\VigilantEye.dir\src\HAL\Sensors\WebcamSource.cpp.obj CMakeFiles\VigilantEye.dir\src\UI\HUD.cpp.obj CMakeFiles\VigilantEye.dir\src\main.cpp.obj | vcpkg_installed\x64-windows\debug\lib\opencv_stitching4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_aruco4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_bgsegm4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_bioinspired4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_ccalib4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_dnn_objdetect4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_dnn_superres4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_dpm4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_face4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_fuzzy4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_hfs4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_img_hash4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_intensity_transform4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_line_descriptor4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_mcc4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_rapid4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_reg4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_saliency4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_signal4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_stereo4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_structured_light4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_superres4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_surface_matching4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_tracking4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_videostab4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_wechat_qrcode4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_xfeatures2d4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_xobjdetect4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_xphoto4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_shape4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_highgui4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_datasets4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_ml4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_plot4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_phase_unwrapping4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_optflow4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_ximgproc4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_video4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_videoio4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_imgcodecs4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_objdetect4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_calib3d4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_dnn4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_features2d4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_flann4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_photo4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_imgproc4d.lib vcpkg_installed\x64-windows\debug\lib\opencv_core4d.lib
   CONFIG = Debug
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
