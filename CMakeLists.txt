@@ -14,7 +14,6 @@ find_package(OpenCV REQUIRED)
 message(STATUS ">> Dependency Check: OpenCV ${OpenCV_VERSION} Found.")
 
 # --- Sources ---
-# תיקון קריטי: סורק את src רקורסיבית
 file(GLOB_RECURSE SRC_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
 
 # Target
