@@ -54,14 +54,23 @@ bool VideoFileSource::initialize()
 bool VideoFileSource::capture(cv::Mat& frame)
 {
     if (!m_cap.isOpened())
+    {
         return false;
+    }
+       
 
     // For files, read() returns false at end-of-stream
     if (!m_cap.read(frame))
+    {
         return false;
+    }
+    
 
     if (frame.empty())
+    {
         return false;
+    }
+       
 
     return true;
 }
@@ -69,5 +78,8 @@ bool VideoFileSource::capture(cv::Mat& frame)
 void VideoFileSource::stop() noexcept
 {
     if (m_cap.isOpened())
+    {
         m_cap.release();
+    }
+       
 }

@@ -37,7 +37,14 @@ public:
     bool capture(cv::Mat& frame) override;
     const std::string& getSourceName() const override { return m_sourceName; }
     ~WebcamSource() override { stop(); }
-    void stop() noexcept override { if (m_cap.isOpened()) m_cap.release(); }
+    void stop() noexcept override
+    {
+        if (m_cap.isOpened())
+        {
+            m_cap.release();
+        }
+        
+    }
 
 
     // Getters
