@@ -6,21 +6,24 @@
 SystemController::SystemController(std::unique_ptr<IFrameSource> sensor)
     : m_sensor(std::move(sensor))
 {
-    
     auto dnnDetector = std::make_unique<DNNObjectDetector>();
 
     std::cout << "[System] Initializing AI..." << std::endl;
-    if (!dnnDetector->init(MODEL_PATH, CONFIG_PATH, CLASSES_PATH))
+
+  
+    bool initSuccess = dnnDetector->init(MODEL_PATH, CONFIG_PATH, CLASSES_PATH);
+
+    if (initSuccess)
     {
-        std::cerr << "[System] Warning: AI Init failed. Running in generic mode." << std::endl;
+        std::cout << "[System] AI Model loaded successfully." << std::endl;
+        
+        m_pipeline.addAlgorithm(std::move(dnnDetector));
     }
     else
     {
-        std::cout << "[System] AI Model loaded." << std::endl;
+        
+        std::cerr << "[System] Warning: AI failed to load. Running in Camera-Only mode." << std::endl;
     }
-
-    
-    m_pipeline.addAlgorithm(std::move(dnnDetector));
 }
 
 void SystemController::run()

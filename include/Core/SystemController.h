@@ -23,7 +23,8 @@ private:
     std::atomic<bool> m_running{ false };
 
   
-    const std::string BASE_DIR{ "C:\\Users\\hadma\\Desktop\\git\\VigilantEye\\config\\models\\" };
+    const std::string BASE_DIR{ "config/models/" };
+
     const std::string MODEL_PATH{ BASE_DIR + "yolov4-tiny.weights" };
     const std::string CONFIG_PATH{ BASE_DIR + "yolov4-tiny.cfg" };
     const std::string CLASSES_PATH{ BASE_DIR + "coco.names.txt" };

@@ -35,8 +35,11 @@ bool DNNObjectDetector::init(const std::string& modelPath, const std::string& co
 
 void DNNObjectDetector::detect(const cv::Mat& input, cv::Mat& output)
 {
-
-    if (output.empty()) input.copyTo(output); 
+    if (m_net.empty()) return;
+    if (output.empty())
+    {
+        input.copyTo(output);
+    }
 
     Mat blob;
     blobFromImage(input, blob, 1 / 255.0, Size(416, 416), Scalar(0, 0, 0), true, false);
