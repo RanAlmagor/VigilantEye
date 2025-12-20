@@ -1,14 +1,15 @@
 ﻿#include <memory>
 #include "Core/SystemController.h"
-#include "HAL/Sensors/VideoFileSource.h"
+#include "HAL/Sensors/WebcamSource.h"
 #include "GeneralUtils/Logger.h"
 
 int main()
 {
     try {
-        Logger::getInstance().log("--- VigilantEye System Startup (Simulation Mode) ---");
+        Logger::getInstance().log("--- VigilantEye System Startup (Webcam Mode) ---");
 
-        auto source = std::make_unique<VideoFileSource>("demo.mp4");
+        // cameraIndex = 0 is usually the default built-in / primary camera
+        auto source = std::make_unique<WebcamSource>(0);
 
         SystemController system(std::move(source));
         system.run();
