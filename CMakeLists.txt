@@ -29,3 +29,15 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 target_link_libraries(${PROJECT_NAME} PRIVATE ${OpenCV_LIBS})
 
 message(STATUS "VigilantEye Configuration Ready.")
+
+# --- Visual Studio: run from project root (so relative paths work) ---
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+)
+
+# --- Copy runtime assets next to the .exe (portable run) ---
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            "${CMAKE_CURRENT_SOURCE_DIR}/config"
+            "$<TARGET_FILE_DIR:${PROJECT_NAME}>/config"
+)

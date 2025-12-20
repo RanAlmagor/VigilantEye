@@ -3,7 +3,6 @@
 
 #include "IVisionAlgorithm.h" 
 
-// שינוי: יורש מ-IVisionAlgorithm
 class MotionDetector : public IVisionAlgorithm
 {
 public:
