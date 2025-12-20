@@ -1,21 +1,18 @@
-﻿#include <iostream>
-#include <memory>
+﻿#include <memory>
 #include "Core/SystemController.h"
-#include "HAL/Sensors/VideoFileSource.h" // <--- חזרנו לזה
-// #include "HAL/Sensors/WebcamSource.h" // <--- את זה נשים בהערה
+#include "HAL/Sensors/VideoFileSource.h"
+#include "GeneralUtils/Logger.h"
 
 int main()
 {
     try {
-        std::cout << "--- VigilantEye System Startup (Simulation Mode) ---" << std::endl;
+        Logger::getInstance().log("--- VigilantEye System Startup (Simulation Mode) ---");
 
-     
         auto source = std::make_unique<VideoFileSource>("demo.mp4");
 
         if (!source->initialize()) {
-            std::cerr << "[Fatal] Video file not found or failed to open." << std::endl;
-            std::cout << "Make sure 'demo.mp4' is in the executable folder." << std::endl;
-            std::cin.get();
+            Logger::getInstance().log("[Fatal] Video file not found or failed to open.");
+            Logger::getInstance().log("Make sure 'demo.mp4' is in the executable folder.");
             return -1;
         }
 
@@ -23,8 +20,7 @@ int main()
         system.run();
     }
     catch (const std::exception& e) {
-        std::cerr << "Fatal Error: " << e.what() << std::endl;
-        std::cin.get();
+        Logger::getInstance().log(std::string("Fatal Error: ") + e.what());
         return -1;
     }
 

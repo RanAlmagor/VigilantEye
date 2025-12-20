@@ -2,7 +2,7 @@
 // VideoFileSource.cpp
 // ===============================
 #include "HAL/Sensors/VideoFileSource.h" 
-#include "GeneralUtils/Logger.h"// שים לב לנתיב הנכון אצלך
+#include "GeneralUtils/Logger.h"
 
 #include <utility> // std::move
 
@@ -42,10 +42,10 @@ bool VideoFileSource::initialize()
     m_width = static_cast<int>(m_cap.get(cv::CAP_PROP_FRAME_WIDTH));
     m_height = static_cast<int>(m_cap.get(cv::CAP_PROP_FRAME_HEIGHT));
 
-    // שינוי קריטי: הסרנו את ה-static_cast<int> כדי לשמור על דיוק
+
     m_fps = m_cap.get(cv::CAP_PROP_FPS);
 
-    // בניית הודעת לוג מסודרת
+
     std::string logMsg = "[HAL] Initialized " + m_sourceName +
         " | Actual: " + std::to_string(m_width) + "x" + std::to_string(m_height) +
         " | FPS: " + std::to_string(m_fps);

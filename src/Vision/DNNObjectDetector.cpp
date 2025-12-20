@@ -1,46 +1,49 @@
 ﻿#include "Vision/DNNObjectDetector.h"
-#include <iostream>
+#include "GeneralUtils/Logger.h" 
 #include <fstream> 
 
 using namespace cv;
 using namespace cv::dnn;
-using namespace std;
-
 
 bool DNNObjectDetector::init(const std::string& modelPath, const std::string& configPath, const std::string& classesPath)
 {
-  
-    ifstream ifs(classesPath.c_str());
+    
+    std::ifstream ifs(classesPath.c_str());
     if (!ifs.is_open()) {
-        cerr << "[DNN] Error: File " << classesPath << " not found!" << endl;
+        Logger::getInstance().log("[DNN] [ERROR] File " + classesPath + " not found!");
         return false;
     }
 
-    string line;
-    while (getline(ifs, line)) {
+    std::string line;
+    while (std::getline(ifs, line)) {
         m_classNames.push_back(line);
     }
 
     if (m_classNames.empty()) {
-        cerr << "[DNN] Error: No classes loaded from " << classesPath << endl;
+        Logger::getInstance().log("[DNN] [ERROR] No classes loaded from " + classesPath);
         return false;
     }
 
    
-    cout << "[DNN] Loading model..." << endl;
+    Logger::getInstance().log("[DNN] Loading model...");
     try {
         m_net = readNetFromDarknet(configPath, modelPath);
     }
     catch (const cv::Exception& e) {
-        cerr << "[DNN] Exception: " << e.what() << endl;
+        Logger::getInstance().log(std::string("[DNN] [EXCEPTION] ") + e.what());
         return false;
     }
 
-    if (m_net.empty()) return false;
+    if (m_net.empty()) {
+        Logger::getInstance().log("[DNN] [ERROR] Failed to load network.");
+        return false;
+    }
 
-    // הגדרות האצה (CPU)
+ 
     m_net.setPreferableBackend(DNN_BACKEND_OPENCV);
     m_net.setPreferableTarget(DNN_TARGET_CPU);
+
+    Logger::getInstance().log("[DNN] Model loaded successfully.");
     return true;
 }
 
@@ -48,27 +51,25 @@ void DNNObjectDetector::detect(const cv::Mat& input, cv::Mat& output)
 {
     if (m_net.empty()) return;
 
-   
     m_latestDetections.clear();
 
-   
     if (output.empty()) {
         input.copyTo(output);
     }
 
-    
+
     Mat blob;
     blobFromImage(input, blob, 1 / 255.0, Size(416, 416), Scalar(0, 0, 0), true, false);
     m_net.setInput(blob);
 
-  
-    vector<Mat> outs;
+   
+    std::vector<Mat> outs;
     m_net.forward(outs, m_net.getUnconnectedOutLayersNames());
 
-  
-    vector<int> classIds;
-    vector<float> confidences;
-    vector<Rect> boxes;
+   
+    std::vector<int> classIds;
+    std::vector<float> confidences;
+    std::vector<Rect> boxes;
 
     for (const auto& out : outs) {
         float* data = (float*)out.data;
@@ -78,7 +79,7 @@ void DNNObjectDetector::detect(const cv::Mat& input, cv::Mat& output)
             double confidence;
             minMaxLoc(scores, 0, &confidence, 0, &classIdPoint);
 
-            if (confidence > 0.65) {
+            if (confidence > 0.65) { 
                 int centerX = (int)(data[0] * input.cols);
                 int centerY = (int)(data[1] * input.rows);
                 int width = (int)(data[2] * input.cols);
@@ -91,11 +92,9 @@ void DNNObjectDetector::detect(const cv::Mat& input, cv::Mat& output)
         }
     }
 
- 
-    vector<int> indices;
+    std::vector<int> indices;
     NMSBoxes(boxes, confidences, 0.5, 0.4, indices);
 
-  
     for (int idx : indices)
     {
         Detection det;
@@ -103,7 +102,6 @@ void DNNObjectDetector::detect(const cv::Mat& input, cv::Mat& output)
         det.confidence = confidences[idx];
         det.box = boxes[idx];
 
-        
         if (classIds[idx] < m_classNames.size()) {
             det.label = m_classNames[classIds[idx]];
         }
@@ -111,9 +109,6 @@ void DNNObjectDetector::detect(const cv::Mat& input, cv::Mat& output)
             det.label = "Unknown";
         }
 
-      
         m_latestDetections.push_back(det);
     }
-
-    
 }

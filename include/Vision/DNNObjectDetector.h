@@ -23,7 +23,7 @@ public:
     
     ~DNNObjectDetector() = default;
 
-    //  === חסימת העתקה (Rule of 5) ===
+    //  ===  (Rule of 5) ===
  
     DNNObjectDetector(const DNNObjectDetector&) = delete;           
     DNNObjectDetector& operator=(const DNNObjectDetector&) = delete; 
