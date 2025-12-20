@@ -4,45 +4,62 @@
 
 #ifndef HAL_SENSORS_IFRAME_SOURCE_H
 #define HAL_SENSORS_IFRAME_SOURCE_H
+
 #include <opencv2/core/mat.hpp>
 #include <string>
+
 /**
  * @brief Interface for any frame provider in the system.
- * This ensures our Tracking Engine doesn't care if the image comes from
- * a USB Webcam, a Video File, or an RTSP Stream.
+ * This contract ensures our Tracking Engine is decoupled from the specific hardware
+ * (USB Webcam, Video File, RTSP Stream, etc.).
  */
-
 class IFrameSource
 {
 public:
+    virtual ~IFrameSource() = default;
 
+    /**
+     * @brief Initialize the hardware connection or open the file.
+     * @return true if successful, false otherwise.
+     */
+    virtual bool initialize() = 0;
 
-	/**
-	 * @brief Initialize the hardware connection.
-	 * @return true if successful, false otherwise.
-	 */
+    /**
+     * @brief Capture the next frame from the source.
+     * @param frame [Out] The matrix to store the image data.
+     * @return true if a frame was captured, false if stream ended or error occurred.
+     */
+    virtual bool capture(cv::Mat& frame) = 0;
 
-	virtual bool initialize() = 0;
+    /**
+     * @brief Release resources and close connection.
+     */
+    virtual void stop() noexcept = 0;
 
+    // ==========================================
+    // Getters for Source Properties
+    // ==========================================
 
-	/**
-	 * @brief Capture the next frame.
-	 * @param frame [Out] The matrix to store the image data.
-	 * @return true if a frame was captured, false if stream ended/error.
-	 */
+    /**
+     * @brief Get the source width in pixels.
+     */
+    virtual int getWidth() const = 0;
 
-	virtual bool capture(cv::Mat& frame) = 0;
+    /**
+     * @brief Get the source height in pixels.
+     */
+    virtual int getHeight() const = 0;
 
-	/**
-	 * @brief Get identifier name (e.g., "Webcam_0" or "VideoFile").
-	 */
-	virtual const std::string& getSourceName() const = 0;
+    /**
+     * @brief Get the Frames Per Second (FPS) of the source.
+     * Important for time-dependent tracking calculations.
+     */
+    virtual double getFPS() const = 0;
 
-
-	virtual void stop() noexcept = 0;
-	virtual ~IFrameSource() = default;
-
+    /**
+     * @brief Get identifier name (e.g., "Webcam_0" or "VideoFile_Trial1").
+     */
+    virtual const std::string& getSourceName() const = 0;
 };
 
 #endif // HAL_SENSORS_IFRAME_SOURCE_H
-

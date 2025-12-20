@@ -1,5 +1,9 @@
-﻿#include "HAL/Sensors/WebcamSource.h"
-#include <iostream>
+﻿// ===============================
+// WebcamSource.cpp
+// ===============================
+#include "HAL/Sensors/WebcamSource.h"
+#include "GeneralUtils/Logger.h" 
+
 #include <string>
 
 // Constructor
@@ -13,17 +17,17 @@ WebcamSource::WebcamSource(int cameraIndex, int targetWidth, int targetHeight, i
     // Lazy Initialization: We don't open the camera here yet.
 }
 
-bool WebcamSource::initialize() 
+bool WebcamSource::initialize()
 {
     stop();
-    std::cout << "[HAL] Opening " << m_sourceName << "..." << std::endl;
+    Logger::getInstance().log("[HAL] Opening " + m_sourceName + "...");
 
     // 1. Open Hardware
     m_cap.open(m_deviceId, cv::CAP_ANY);
 
-    if (!m_cap.isOpened()) 
+    if (!m_cap.isOpened())
     {
-        std::cerr << "[ERROR] Failed to open camera index: " << m_deviceId << std::endl;
+        Logger::getInstance().log("[ERROR] Failed to open camera index: " + std::to_string(m_deviceId));
         return false;
     }
 
@@ -35,13 +39,14 @@ bool WebcamSource::initialize()
     // 3. Verify (Actual)
     m_actualWidth = static_cast<int>(m_cap.get(cv::CAP_PROP_FRAME_WIDTH));
     m_actualHeight = static_cast<int>(m_cap.get(cv::CAP_PROP_FRAME_HEIGHT));
-    m_actualFps = static_cast<int>(m_cap.get(cv::CAP_PROP_FPS));
 
-    std::cout << "[HAL] Initialized " << m_sourceName
-        << " | Actual: " << m_actualWidth << "x" << m_actualHeight
-        << " | FPS: " << m_actualFps
-        << std::endl;
+    
+    m_actualFps = m_cap.get(cv::CAP_PROP_FPS);
 
+    std::string logMsg = "[HAL] Initialized " + m_sourceName +
+        " | Actual: " + std::to_string(m_actualWidth) + "x" + std::to_string(m_actualHeight) +
+        " | FPS: " + std::to_string(m_actualFps);
+    Logger::getInstance().log(logMsg);
 
     return true;
 }
@@ -56,5 +61,3 @@ bool WebcamSource::capture(cv::Mat& frame) {
     }
     return true;
 }
-
-

@@ -1,10 +1,10 @@
-// ===============================
+﻿// ===============================
 // VideoFileSource.cpp
 // ===============================
-#include "HAL/Sensors/VideoFileSource.h"
+#include "HAL/Sensors/VideoFileSource.h" 
+#include "GeneralUtils/Logger.h"// שים לב לנתיב הנכון אצלך
 
-#include <iostream>
-#include <utility>  // std::move
+#include <utility> // std::move
 
 VideoFileSource::VideoFileSource(std::string filePath, int targetFps)
     : m_filePath(std::move(filePath)),
@@ -19,34 +19,37 @@ bool VideoFileSource::initialize()
 
     if (m_filePath.empty())
     {
-        std::cerr << "[ERROR] VideoFileSource: empty file path.\n";
+        Logger::getInstance().log("[ERROR] VideoFileSource: empty file path.");
         return false;
     }
 
-    std::cout << "[HAL] Opening " << m_sourceName << " | Path: " << m_filePath << "...\n";
+    Logger::getInstance().log("[HAL] Opening " + m_sourceName + " | Path: " + m_filePath + "...");
 
     // Open file
     m_cap.open(m_filePath);
 
     if (!m_cap.isOpened())
     {
-        std::cerr << "[ERROR] Failed to open video file: " << m_filePath << "\n";
+        Logger::getInstance().log("[ERROR] Failed to open video file: " + m_filePath);
         return false;
     }
 
-    // Best-effort request (often ignored for files, but harmless)
+    // Best-effort request
     if (m_targetFps > 0)
         m_cap.set(cv::CAP_PROP_FPS, m_targetFps);
 
     // Read actual properties
     m_width = static_cast<int>(m_cap.get(cv::CAP_PROP_FRAME_WIDTH));
     m_height = static_cast<int>(m_cap.get(cv::CAP_PROP_FRAME_HEIGHT));
-    m_fps = static_cast<int>(m_cap.get(cv::CAP_PROP_FPS));
 
-    std::cout << "[HAL] Initialized " << m_sourceName
-        << " | Actual: " << m_width << "x" << m_height
-        << " | FPS: " << m_fps
-        << std::endl;
+    // שינוי קריטי: הסרנו את ה-static_cast<int> כדי לשמור על דיוק
+    m_fps = m_cap.get(cv::CAP_PROP_FPS);
+
+    // בניית הודעת לוג מסודרת
+    std::string logMsg = "[HAL] Initialized " + m_sourceName +
+        " | Actual: " + std::to_string(m_width) + "x" + std::to_string(m_height) +
+        " | FPS: " + std::to_string(m_fps);
+    Logger::getInstance().log(logMsg);
 
     return true;
 }
@@ -57,20 +60,17 @@ bool VideoFileSource::capture(cv::Mat& frame)
     {
         return false;
     }
-       
 
     // For files, read() returns false at end-of-stream
     if (!m_cap.read(frame))
     {
         return false;
     }
-    
 
     if (frame.empty())
     {
         return false;
     }
-       
 
     return true;
 }
@@ -81,5 +81,4 @@ void VideoFileSource::stop() noexcept
     {
         m_cap.release();
     }
-       
 }

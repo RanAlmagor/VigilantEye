@@ -1,27 +1,25 @@
 ﻿#include <iostream>
 #include <memory>
 #include "Core/SystemController.h"
-#include "HAL/Sensors/WebcamSource.h"
+#include "HAL/Sensors/VideoFileSource.h" // <--- חזרנו לזה
+// #include "HAL/Sensors/WebcamSource.h" // <--- את זה נשים בהערה
 
 int main()
 {
     try {
-        std::cout << "--- VigilantEye Startup ---" << std::endl;
+        std::cout << "--- VigilantEye System Startup (Simulation Mode) ---" << std::endl;
 
-  
-        auto camera = std::make_unique<WebcamSource>(0);
+     
+        auto source = std::make_unique<VideoFileSource>("demo.mp4");
 
-        
-        if (!camera->initialize()) {
-            std::cerr << "[Fatal] Could not initialize camera!" << std::endl;
-            std::cin.get(); 
+        if (!source->initialize()) {
+            std::cerr << "[Fatal] Video file not found or failed to open." << std::endl;
+            std::cout << "Make sure 'demo.mp4' is in the executable folder." << std::endl;
+            std::cin.get();
             return -1;
         }
 
-        
-        SystemController system(std::move(camera));
-
-       
+        SystemController system(std::move(source));
         system.run();
     }
     catch (const std::exception& e) {

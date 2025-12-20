@@ -92,7 +92,7 @@ namespace Vision {
                 usedRows[i] = true;
                 usedCols[bestMatchIdx] = true;
 
-                // ????? ???????? ?????
+      
                 int objID = objectIDs[i];
                 m_objects[objID].bbox = detections[bestMatchIdx];
                 m_objects[objID].center = inputCentroids[bestMatchIdx];
@@ -100,9 +100,9 @@ namespace Vision {
             }
         }
 
-        // 4. ????? ???????
+      
 
-        // ????????? ????? ??? ???? ??? ????? -> ?????
+
         for (size_t i = 0; i < objectIDs.size(); ++i) {
             if (!usedRows[i]) {
                 int objID = objectIDs[i];

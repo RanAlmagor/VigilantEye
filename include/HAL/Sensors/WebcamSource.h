@@ -1,4 +1,3 @@
-
 // ===============================
 // WebcamSource.h
 // ===============================
@@ -7,14 +6,12 @@
 #define HAL_SENSORS_WEBCAM_SOURCE_H
 
 #include "IFrameSource.h"
-#include <opencv2/videoio.hpp> 
+#include <opencv2/videoio.hpp>
 #include <string>
-
 
 class WebcamSource : public IFrameSource
 {
 public:
- 
     static constexpr int kDefaultDeviceId = 0;
     static constexpr int kDefaultWidth = 640;
     static constexpr int kDefaultHeight = 480;
@@ -32,40 +29,38 @@ public:
     WebcamSource& operator=(const WebcamSource&) = delete;
     WebcamSource& operator=(WebcamSource&&) noexcept = default;
 
-    // Interface
+    ~WebcamSource() override { stop(); }
+
+    // ===============================
+    // IFrameSource Implementation
+    // ===============================
     bool initialize() override;
     bool capture(cv::Mat& frame) override;
     const std::string& getSourceName() const override { return m_sourceName; }
-    ~WebcamSource() override { stop(); }
-    void stop() noexcept override
-    {
-        if (m_cap.isOpened())
-        {
+
+    void stop() noexcept override {
+        if (m_cap.isOpened()) {
             m_cap.release();
         }
-        
     }
 
-
-    // Getters
-    int width()  const { return m_actualWidth; }
-    int height() const { return m_actualHeight; }
-    int fps()    const { return m_actualFps; }
+    
+    int getWidth() const override { return m_actualWidth; }
+    int getHeight() const override { return m_actualHeight; }
+    double getFPS() const override { return m_actualFps; }
 
 private:
     cv::VideoCapture m_cap;
     std::string m_sourceName;
 
-    
     int m_deviceId;
     int m_targetWidth;
     int m_targetHeight;
     int m_targetFps;
 
-    
     int m_actualWidth = 0;
     int m_actualHeight = 0;
-    int m_actualFps = 0;
+    double m_actualFps = 0.0; 
 };
 
 #endif // HAL_SENSORS_WEBCAM_SOURCE_H
