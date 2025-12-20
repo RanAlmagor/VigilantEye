@@ -10,16 +10,10 @@
 
 ---
 
-## 🎬 Demo
-> Put your GIF at: `assets/screenshots/demo.gif`
+## 🖼️ Screenshots
+> Images are stored under `assets/screenshots/`
 
-![VigilantEye Demo](assets/screenshots/demo.gif)
-
-**Convert the included `demo.mp4` to GIF (recommended):**
-```bash
-# Requires ffmpeg
-ffmpeg -i demo.mp4 -vf "fps=15,scale=960:-1:flags=lanczos" -loop 0 assets/demo.gif
-```
+<img src="assets/screenshots/Shot1.jpeg" width="49%"/> <img src="assets/screenshots/Shot2.png" width="49%"/>
 
 ---
 
@@ -51,6 +45,9 @@ flowchart LR
 ```text
 VigilantEye/
 ├─ assets/
+│  └─ screenshots/
+│     ├─ Shot1.jpeg
+│     └─ Shot2.png
 ├─ config/
 │  ├─ models/
 │  │  ├─ coco.names.txt
