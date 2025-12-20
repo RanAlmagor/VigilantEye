@@ -10,12 +10,6 @@ int main()
 
         auto source = std::make_unique<VideoFileSource>("demo.mp4");
 
-        if (!source->initialize()) {
-            Logger::getInstance().log("[Fatal] Video file not found or failed to open.");
-            Logger::getInstance().log("Make sure 'demo.mp4' is in the executable folder.");
-            return -1;
-        }
-
         SystemController system(std::move(source));
         system.run();
     }
