@@ -1,143 +1,64 @@
 # VigilantEye 👁️‍🗨️  
-**Real-Time UAV / Object Tracking Pipeline (C++17 + OpenCV)**  
+**Real-Time Vision Pipeline (C++17 + OpenCV)**  
 ![Status](https://img.shields.io/badge/status-active%20development-success)
 ![C++](https://img.shields.io/badge/C%2B%2B-17-blue)
 ![Build](https://img.shields.io/badge/build-CMake-informational)
 ![Deps](https://img.shields.io/badge/deps-vcpkg%20manifest-informational)
 ![OpenCV](https://img.shields.io/badge/OpenCV-required-brightgreen)
 
-> **VigilantEye** is a modular, real-time vision pipeline designed to capture frames from multiple sources, run detection/tracking, and render an overlay/HUD — with a clean HAL-style architecture to support future sensors and actuators.
+A modular, real-time computer-vision pipeline that captures frames from interchangeable sources, runs detection/tracking, and renders a tactical HUD overlay.
 
 ---
 
-## 🖼️ Screenshots
-> Images are stored under `assets/screenshots/`
+## Screenshots
 
 <img src="assets/screenshots/Shot1.jpeg" width="49%"/> <img src="assets/screenshots/Shot2.png" width="49%"/>
 
 ---
 
-## ✨ Highlights
-- **Pluggable Frame Sources (HAL/Sensors)**: webcam & video file today, RTSP/network source planned.
-- **Vision Modules (Vision)**:
-  - DNN-based detection (OpenCV DNN + YOLOv4-tiny model files in `config/models/`)
-  - Motion detection
-  - Object tracking interface ready for expansion
-- **Pipeline-driven architecture** (Core): frame → detect/track → HUD/overlay.
-- **Portable runtime config**: `config/` is copied next to the executable after build for easy runs.
+## What’s inside
+
+### Core
+- **SystemController** orchestrates the run loop, connects the sensor → pipeline → tracker → HUD.
+- **Pipeline** composes vision stages via `std::vector<std::unique_ptr<IVisionAlgorithm>>` for clean ownership and extensibility.
+
+### HAL / Sensors
+- **IFrameSource** interface (`initialize`, `capture`, `stop`, `getFPS`, `getWidth/Height`, `getSourceName`).
+- **WebcamSource** and **VideoFileSource** implementations (copy disabled, move enabled; `stop()` called on destruction).
+
+### Vision
+- **IVisionAlgorithm** interface (`detect(const cv::Mat&, cv::Mat&)`).
+- **DNNObjectDetector** (OpenCV DNN, YOLOv4-tiny) producing `Detection { classId, confidence, box, label }`.
+- **MotionDetector** (frame-diff style motion detection; keeps previous frame).
+- **ObjectTracker** (lightweight ID-based tracking using bbox/centroid + disappearance counter).
+
+### UI
+- **HUD** overlays detection brackets, crosshair, and status bar (object count + FPS).
+
+### Utilities
+- **FrameResizePolicy** helpers for processing/display sizing and scaling rectangles between spaces.
+- **Logger** thread-safe singleton for structured console logging.
 
 ---
 
-## 🧱 Architecture (High-Level)
+## Build (Windows / Visual Studio + vcpkg preset)
 
-```mermaid
-flowchart LR
-  A[Frame Source<br/>Webcam / Video File / (RTSP planned)] --> B[Core::Pipeline]
-  B --> C[Vision Algorithms<br/>DNN Detector / Motion Detector / Tracker]
-  C --> D[UI::HUD Overlay]
-  D --> E[Output Frame / Display]
-```
-
----
-
-## 📁 Project Structure
-
-```text
-VigilantEye/
-├─ assets/
-│  └─ screenshots/
-│     ├─ Shot1.jpeg
-│     └─ Shot2.png
-├─ config/
-│  ├─ models/
-│  │  ├─ coco.names.txt
-│  │  ├─ yolov4-tiny.cfg
-│  │  └─ yolov4-tiny.weights
-│  └─ system_config.json
-├─ include/
-│  ├─ Core/
-│  ├─ GeneralUtils/        (Logger, SafeQueue)
-│  ├─ HAL/
-│  │  ├─ Actuators/        (IMotorController, VirtualMotor)
-│  │  └─ Sensors/          (IFrameSource, WebcamSource, VideoFileSource)
-│  ├─ UI/                  (HUD)
-│  └─ Vision/              (DNNObjectDetector, MotionDetector, ObjectTracker, IVisionAlgorithm)
-├─ src/
-│  ├─ Core/                (Pipeline.cpp, SystemController.cpp)
-│  ├─ GeneralUtils/         (Logger.cpp)
-│  ├─ HAL/Sensors/          (WebcamSource.cpp, VideoFileSource.cpp)
-│  └─ Vision/               (DNNObjectDetector.cpp, MotionDetector.cpp, ObjectTracker.cpp)
-├─ tests/
-├─ vcpkg/                   (submodule)
-├─ CMakeLists.txt
-├─ CMakePresets.json
-├─ vcpkg.json
-├─ demo.mp4
-└─ main.cpp
-```
-
----
-
-## ✅ Requirements
-- **C++17 compiler**
-- **CMake**
-- **OpenCV** (installed via vcpkg manifest or system install)
-- Windows recommended setup: **Visual Studio 2022** generator preset.
-
----
-
-## ⚡ Build & Run (Windows / Visual Studio + vcpkg preset)
-
-### 1) Clone with submodules
 ```bash
 git clone --recurse-submodules <YOUR_REPO_URL>
 cd VigilantEye
-```
 
-### 2) Configure & build (CMake Presets)
-```bash
 cmake --preset vs-debug
 cmake --build --preset build-vs-debug
 ```
 
-### 3) Run
-After building, run the executable from the build output folder.
+---
+
+## Notes on Modern C++ usage
+- Interface-driven design (`IFrameSource`, `IVisionAlgorithm`) to keep modules decoupled.
+- Ownership is explicit with **smart pointers** (`std::unique_ptr`) in the pipeline and controller layer.
+- Several components are **move-enabled** and **copy-disabled** (Rule-of-Five style) to avoid accidental expensive copies.
 
 ---
 
-## 🧩 Configuration
-Runtime configuration lives in:
-- `config/system_config.json`
-
-Use it to select the input source (webcam / video) and configure vision modules (detector/tracker parameters).  
-*(If you want, paste the JSON here and I’ll document every field cleanly in the README.)*
-
----
-
-## 🧠 Models (YOLOv4-tiny)
-The repo includes model assets under:
-- `config/models/yolov4-tiny.cfg`
-- `config/models/yolov4-tiny.weights`
-- `config/models/coco.names.txt`
-
-The **DNNObjectDetector** loads these files using OpenCV DNN to perform object detection.
-
----
-
-## 🛣️ Roadmap (Planned)
-- [ ] **RTSPSource**: network/IP camera stream support
-- [ ] UI: richer HUD (labels, confidence, tracking IDs, FPS)
-- [ ] Actuators: real motor controller integration (beyond VirtualMotor)
-- [ ] Tests: unit tests for utils + vision components
-- [ ] Docs: diagrams + usage examples
-
----
-
-## 🧪 Notes
-- This repository is **actively developed** — interfaces and modules are designed for growth as new sensors/algorithms are added.
-- Contributions / suggestions are welcome (issues / PRs).
-
----
-
-## 📜 License
-Licensed under the **MIT License** (see `LICENSE`).
+## Author
+Ran Almagor
